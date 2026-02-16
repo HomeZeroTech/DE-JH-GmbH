@@ -1,0 +1,480 @@
+/* ─────────────────────────────────────────────────────────────
+   DE-JH-GmbH Lead Flow Widget – Styles
+   ───────────────────────────────────────────────────────────── */
+
+/* ── Design Tokens ──────────────────────────────────────────── */
+:root {
+  --pw-navy: #1B3A5C;
+  --pw-green: #008A26;
+  --pw-green-hover: #007020;
+  --pw-light-blue: #EBF3FB;
+  --pw-border: #D8DDE3;
+  --pw-border-selected: #004A8F;
+  --pw-bg-card: #FFFFFF;
+  --pw-bg-card-hover: #F7F9FB;
+  --pw-gray-text: #8899AA;
+  --pw-disabled-bg: #EAECEF;
+  --pw-disabled-text: #A0A8B2;
+  --pw-radius-card: 14px;
+  --pw-radius-btn: 50px;
+  --pw-radius-input: 12px;
+  --pw-transition: 0.2s ease;
+}
+
+/* ── Widget Container ───────────────────────────────────────── */
+.pico-widget {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  color: var(--pw-navy);
+  background: var(--pw-bg-card);
+  border-radius: 16px;
+  border: 2px solid var(--pw-border-selected);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.pico-widget *,
+.pico-widget *::before,
+.pico-widget *::after {
+  box-sizing: border-box;
+}
+
+/* ── Hidden hz-embed ────────────────────────────────────────── */
+.pico-hz-embed-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.pico-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 0;
+  flex-shrink: 0;
+  min-height: 48px;
+}
+
+.pico-header-left,
+.pico-header-right {
+  width: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.pico-header-right {
+  justify-content: flex-end;
+}
+
+.pico-header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.pico-btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--pw-transition);
+}
+
+.pico-btn-icon:hover {
+  background: rgba(27, 58, 92, 0.07);
+}
+
+/* ── Progress Bar ───────────────────────────────────────────── */
+.pico-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pico-progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pw-border);
+  transition: background var(--pw-transition);
+}
+
+.pico-progress-dot--done {
+  background: var(--pw-navy);
+}
+
+.pico-progress-pill {
+  width: 36px;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--pw-navy);
+}
+
+/* ── Body ───────────────────────────────────────────────────── */
+.pico-widget-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Step Generic ───────────────────────────────────────────── */
+.pico-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pico-step-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: 16px 0 4px;
+  line-height: 1.35;
+  color: var(--pw-navy);
+}
+
+.pico-step-subtitle {
+  text-align: center;
+  color: var(--pw-gray-text);
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.pico-step-center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 16px;
+}
+
+/* ── Option Cards ───────────────────────────────────────────── */
+.pico-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: auto;
+}
+
+.pico-options--spaced {
+  margin-top: 16px;
+}
+
+.pico-option-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background: var(--pw-bg-card);
+  border: 1.5px solid var(--pw-border);
+  border-radius: var(--pw-radius-card);
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all var(--pw-transition);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--pw-navy);
+  text-align: left;
+  font-family: inherit;
+}
+
+.pico-option-card:hover {
+  background: var(--pw-bg-card-hover);
+  border-color: #B8C4D0;
+}
+
+.pico-option-card--selected {
+  background: var(--pw-light-blue);
+  border-color: var(--pw-border-selected);
+}
+
+.pico-option-card--selected:hover {
+  background: var(--pw-light-blue);
+  border-color: var(--pw-border-selected);
+}
+
+.pico-option-check {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.pico-option-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.pico-option-label {
+  flex: 1;
+}
+
+/* ── Primary Button ─────────────────────────────────────────── */
+.pico-btn-primary {
+  width: 100%;
+  padding: 16px 24px;
+  border: none;
+  border-radius: var(--pw-radius-btn);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--pw-transition);
+  background: var(--pw-disabled-bg);
+  color: var(--pw-disabled-text);
+  margin-top: 20px;
+  flex-shrink: 0;
+  font-family: inherit;
+}
+
+.pico-btn-primary--active {
+  background: var(--pw-green);
+  color: #fff;
+  cursor: pointer;
+}
+
+.pico-btn-primary--active:hover {
+  background: var(--pw-green-hover);
+}
+
+.pico-btn-primary:disabled {
+  cursor: not-allowed;
+}
+
+/* ── Form Styles (Steps 4a/4b) ──────────────────────────────── */
+.pico-step-form {
+  gap: 0;
+}
+
+.pico-step-form .pico-step-title {
+  margin-bottom: 14px;
+}
+
+.pico-input-wrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.pico-input {
+  width: 100%;
+  padding: 14px 48px 14px 16px;
+  border: 1.5px solid var(--pw-border);
+  border-radius: var(--pw-radius-input);
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--pw-navy);
+  background: #fff;
+  outline: none;
+  transition: border-color var(--pw-transition);
+}
+
+.pico-input::placeholder {
+  color: var(--pw-gray-text);
+}
+
+.pico-input:focus {
+  border-color: var(--pw-navy);
+}
+
+.pico-input-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* Field group (highlighted box for address) */
+.pico-field-group {
+  margin-bottom: 12px;
+}
+
+.pico-field-group--highlight {
+  background: var(--pw-light-blue);
+  border: 1.5px solid #C4D8EE;
+  border-radius: var(--pw-radius-input);
+  padding: 14px 14px 10px;
+}
+
+.pico-field-group--highlight .pico-input-wrap {
+  margin-bottom: 6px;
+}
+
+.pico-field-group--highlight .pico-input {
+  border: 1.5px solid #B8CCE0;
+}
+
+.pico-field-hint {
+  font-size: 12px;
+  color: var(--pw-gray-text);
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Two column layout for name fields */
+.pico-two-col {
+  display: flex;
+  gap: 10px;
+}
+
+.pico-two-col .pico-input-wrap {
+  flex: 1;
+}
+
+/* ── Info Lines ──────────────────────────────────────────────── */
+.pico-info-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.pico-info-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--pw-gray-text);
+}
+
+.pico-info-line svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  stroke: var(--pw-navy);
+  opacity: 0.6;
+}
+
+/* ── Checkbox ────────────────────────────────────────────────── */
+.pico-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--pw-navy);
+}
+
+.pico-checkbox-label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.pico-checkbox-custom {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--pw-border);
+  border-radius: 4px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--pw-transition);
+  margin-top: 1px;
+}
+
+.pico-checkbox-label input[type="checkbox"]:checked+.pico-checkbox-custom {
+  background: var(--pw-navy);
+  border-color: var(--pw-navy);
+}
+
+.pico-checkbox-label input[type="checkbox"]:checked+.pico-checkbox-custom::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+
+.pico-checkbox-text {
+  flex: 1;
+}
+
+.pico-required {
+  color: #C0392B;
+  font-weight: 700;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .pico-widget {
+    height: 640px;
+    border-radius: 12px;
+  }
+
+  .pico-widget-body {
+    padding: 0 16px 16px;
+  }
+
+  .pico-step-title {
+    font-size: 18px;
+  }
+
+  .pico-option-card {
+    padding: 13px 14px;
+    font-size: 14px;
+  }
+
+  .pico-btn-primary {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .pico-two-col {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+/* ── Google Maps Autocomplete dropdown override ─────────────── */
+.pac-container {
+  border-radius: 10px;
+  border: 1px solid var(--pw-border);
+  box-shadow: 0 4px 16px rgba(27, 58, 92, 0.12);
+  font-family: inherit;
+  z-index: 99999;
+}
+
+.pac-item {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: var(--pw-navy);
+  cursor: pointer;
+}
+
+.pac-item:hover {
+  background: var(--pw-light-blue);
+}
+
+.pac-icon {
+  display: none;
+}
+
+.pac-item-query {
+  color: var(--pw-navy);
+  font-weight: 600;
+}
