@@ -68,8 +68,8 @@ Simply tell the AI what you want to build.
 
 The AI will make the changes.
 
--   If you are using Antigravity, ask the AI to **"Run the test server"**. It will give you a link to preview your widget. If that doesn't work and you know how to use the terminal, you can run `npm run start`.
--   If you are just editing files, the AI will tell you when it's done.
+- If you are using Antigravity, ask the AI to **"Run the test server"**. It will give you a link to preview your widget. If that doesn't work and you know how to use the terminal, you can run `npm run start`.
+- If you are just editing files, the AI will tell you when it's done.
 
 ### Step 4: Deploy the code
 
@@ -88,6 +88,33 @@ It should look like something like this, make sure the id matches the one in the
     src="https://homezerotech.github.io/your-widget-name/widget.js"
 ></script>
 <div id="pico-widget-container"></div>
+```
+
+---
+
+### 📤 Data opsturen (Context)
+
+Als je alle ingevulde informatie van de widget wilt opsturen naar de achterliggende systemen, kan dit op twee manieren:
+
+1.  **Public Pico API**: De widget kan alle informatie als een **HTML list** meesturen in het `AssignmentDescription` veld.
+2.  **HomeZero Widget**: Je kunt dynamisch een extra HTML attribuut `data-context` zetten met een **HTML list als string**.
+
+**Voorbeeld van de HomeZero widget met context:**
+
+```html
+<hz-embed
+    src="https://homezero-accp.mendixcloud.com/link/start?id=5fc267a2-d867-4b72-ad76-2546f5019f9f"
+    data-open-new-tab="true"
+    data-button-text="Scan"
+    data-button-radius="10px"
+    data-color="#004DF5"
+    data-title="Titel"
+    data-subtitle="Subtitel test hallo daar"
+    data-checkbox-title="Ik ga akkoord met de voorwaarden"
+    data-checkbox-shorttitle="terms_accepted"
+    data-checkbox-required="true"
+    data-context="<ul><li>vraag 1: Geen thuisbatterij</li></ul>"
+></hz-embed>
 ```
 
 ---
