@@ -311,7 +311,8 @@ function Step4a({ formData, setFormData, onSubmit }) {
     return () => clearInterval(interval);
   }, [setFormData]);
 
-  const hasHouseNumberError = addressSelected && !formData.housenumber;
+  const hasHouseNumber = formData.housenumber || /\d/.test(formData.address);
+  const hasHouseNumberError = addressSelected && !hasHouseNumber;
 
   const canSubmit = addressSelected && formData.privacyChecked && !hasHouseNumberError;
 
@@ -442,7 +443,8 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
     return () => clearInterval(interval);
   }, [setFormData]);
 
-  const hasHouseNumberError = addressSelected && !formData.housenumber;
+  const hasHouseNumber = formData.housenumber || /\d/.test(formData.address);
+  const hasHouseNumberError = addressSelected && !hasHouseNumber;
 
   const canSubmit =
     formData.firstName &&
