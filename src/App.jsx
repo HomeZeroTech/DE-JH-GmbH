@@ -325,7 +325,15 @@ function Step4a({ formData, setFormData, onSubmit }) {
   };
 
   const handleSubmit = () => {
-    if (!submitActive) return;
+    if (!submitActive) {
+      // Mark all fields as touched to show missing warnings
+      setTouched({
+        address: true,
+        email: true,
+        privacyChecked: true,
+      });
+      return;
+    }
     onSubmit();
   };
 
@@ -406,7 +414,6 @@ function Step4a({ formData, setFormData, onSubmit }) {
 
       <button
         className={`pico-btn-primary ${submitActive ? 'pico-btn-primary--active' : ''}`}
-        disabled={!submitActive}
         onClick={handleSubmit}
       >
         Check starten
@@ -490,7 +497,19 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
   };
 
   const handleSubmit = async () => {
-    if (!submitActive || submitting) return;
+    if (!submitActive) {
+      // Mark all fields as touched to show missing warnings
+      setTouched({
+        firstName: true,
+        lastName: true,
+        address: true,
+        email: true,
+        phone: true,
+        privacyChecked: true,
+      });
+      return;
+    }
+    if (submitting) return;
     setSubmitting(true);
 
     const body = {
@@ -654,7 +673,7 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
 
       <button
         className={`pico-btn-primary ${submitActive ? 'pico-btn-primary--active' : ''}`}
-        disabled={!submitActive || submitting}
+        disabled={submitting}
         onClick={handleSubmit}
       >
         {submitting ? 'Wird gesendet…' : 'Rückruf anfordern'}
