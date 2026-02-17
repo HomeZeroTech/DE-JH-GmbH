@@ -311,13 +311,19 @@ function Step4a({ formData, setFormData, onSubmit }) {
     return () => clearInterval(interval);
   }, [setFormData]);
 
-  const hasHouseNumber = formData.housenumber || /\d/.test(formData.address);
-  const hasHouseNumberError = addressSelected && !hasHouseNumber;
+  const emailIsValid = !formData.email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
+  const emailError = formData.email && !emailIsValid;
 
-  const canSubmit = addressSelected && formData.privacyChecked && !hasHouseNumberError;
+  const [triedToSubmit, setTriedToSubmit] = useState(false);
+
+  const canSubmit = addressSelected && formData.privacyChecked;
+  const submitActive = canSubmit && emailIsValid;
 
   const handleSubmit = () => {
-    if (!canSubmit) return;
+    if (!submitActive) {
+      if (canSubmit) setTriedToSubmit(true);
+      return;
+    }
     onSubmit();
   };
 
@@ -330,7 +336,7 @@ function Step4a({ formData, setFormData, onSubmit }) {
           <input
             ref={addressInputRef}
             type="text"
-            className={`pico-input ${hasHouseNumberError ? 'pico-input-error' : ''}`}
+            className="pico-input"
             placeholder="Ihre Adresse*"
             value={formData.address}
             onChange={(e) => {
@@ -339,9 +345,6 @@ function Step4a({ formData, setFormData, onSubmit }) {
             }}
           />
           <span className="pico-input-icon"><IconLocation /></span>
-          {hasHouseNumberError && (
-            <p className="pico-error-text">Bitte geben Sie eine Hausnummer an.</p>
-          )}
         </div>
         <p className="pico-field-hint">
           Wir benötigen Ihre Adresse ausschließlich für Ihren persönlichen Wärmepumpen-Check.
@@ -351,12 +354,17 @@ function Step4a({ formData, setFormData, onSubmit }) {
       <div className="pico-input-wrap">
         <input
           type="email"
-          className="pico-input"
+          className={`pico-input ${emailError && triedToSubmit ? "pico-input-error" : ""}`}
           placeholder="Ihre E-Mail-Adresse (optional)"
           value={formData.email}
           onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
         />
         <span className="pico-input-icon"><IconEmail /></span>
+        {emailError && triedToSubmit && (
+          <p className="pico-error-text">
+            Bitte geben Sie eine gültige E-Mail-Adresse an.
+          </p>
+        )}
       </div>
 
       <div className="pico-info-lines">
@@ -384,7 +392,7 @@ function Step4a({ formData, setFormData, onSubmit }) {
       </label>
 
       <button
-        className={`pico-btn-primary ${canSubmit ? 'pico-btn-primary--active' : ''}`}
+        className={`pico-btn-primary ${submitActive ? 'pico-btn-primary--active' : ''}`}
         disabled={!canSubmit}
         onClick={handleSubmit}
       >
@@ -397,6 +405,7 @@ function Step4a({ formData, setFormData, onSubmit }) {
 /* ──────────────────────── STEP 4b ──────────────────────────── */
 
 function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
+  const [triedToSubmit, setTriedToSubmit] = useState(false);
   const addressInputRef = useRef(null);
   const autocompleteRef = useRef(null);
   const [addressSelected, setAddressSelected] = useState(false);
@@ -443,20 +452,28 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
     return () => clearInterval(interval);
   }, [setFormData]);
 
-  const hasHouseNumber = formData.housenumber || /\d/.test(formData.address);
-  const hasHouseNumberError = addressSelected && !hasHouseNumber;
+  const sanitizedPhone = formData.phone.replace(/\s/g, "");
+  const phoneIsValid = /^\+?[0-9]{6,15}$/.test(sanitizedPhone);
+  const phoneError = formData.phone && !phoneIsValid;
+
+  const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
+  const emailError = formData.email && !emailIsValid;
 
   const canSubmit =
     formData.firstName &&
     formData.lastName &&
     addressSelected &&
-    !hasHouseNumberError &&
     formData.email &&
     formData.phone &&
     formData.privacyChecked;
 
+  const submitActive = canSubmit && phoneIsValid && emailIsValid;
+
   const handleSubmit = async () => {
-    if (!canSubmit || submitting) return;
+    if (!submitActive || submitting) {
+      if (canSubmit && !submitting) setTriedToSubmit(true);
+      return;
+    }
     setSubmitting(true);
 
     const body = {
@@ -534,7 +551,7 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
         <input
           ref={addressInputRef}
           type="text"
-          className={`pico-input ${hasHouseNumberError ? 'pico-input-error' : ''}`}
+          className="pico-input"
           placeholder="Ihre Adresse*"
           value={formData.address}
           onChange={(e) => {
@@ -543,31 +560,38 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
           }}
         />
         <span className="pico-input-icon"><IconLocation /></span>
-        {hasHouseNumberError && (
-          <p className="pico-error-text">Bitte geben Sie eine Hausnummer an.</p>
-        )}
       </div>
 
       <div className="pico-input-wrap">
         <input
           type="email"
-          className="pico-input"
+          className={`pico-input ${emailError && triedToSubmit ? "pico-input-error" : ""}`}
           placeholder="Ihre E-Mail-Adresse*"
           value={formData.email}
           onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
         />
         <span className="pico-input-icon"><IconEmail /></span>
+        {emailError && triedToSubmit && (
+          <p className="pico-error-text">
+            Bitte geben Sie eine gültige E-Mail-Adresse an.
+          </p>
+        )}
       </div>
 
       <div className="pico-input-wrap">
         <input
           type="tel"
-          className="pico-input"
+          className={`pico-input ${phoneError && triedToSubmit ? "pico-input-error" : ""}`}
           placeholder="Ihre Telefonnummer*"
           value={formData.phone}
           onChange={(e) => setFormData((p) => ({ ...p, phone: e.target.value }))}
         />
         <span className="pico-input-icon"><IconPhoneField /></span>
+        {phoneError && triedToSubmit && (
+          <p className="pico-error-text">
+            Bitte geben Sie eine gültige Telefonnummer an.
+          </p>
+        )}
       </div>
 
       <div className="pico-info-lines">
@@ -592,7 +616,7 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
       </label>
 
       <button
-        className={`pico-btn-primary ${canSubmit ? 'pico-btn-primary--active' : ''}`}
+        className={`pico-btn-primary ${submitActive ? 'pico-btn-primary--active' : ''}`}
         disabled={!canSubmit || submitting}
         onClick={handleSubmit}
       >
