@@ -149,8 +149,9 @@
 
 .pico-step-subtitle {
   text-align: center;
-  color: var(--pw-gray-text);
+  color: #4B6076;
   font-size: 13px;
+  font-weight: 500;
   margin: 0 0 12px;
 }
 
@@ -286,6 +287,18 @@
 
 .pico-input:focus {
   border-color: var(--pw-navy);
+}
+
+.pico-input-error {
+  border-color: #C0392B !important;
+}
+
+.pico-error-text {
+  color: #C0392B;
+  font-size: 11px;
+  margin: 4px 0 0;
+  font-weight: 500;
+  text-align: left;
 }
 
 .pico-input-icon {

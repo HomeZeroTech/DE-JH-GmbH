@@ -311,7 +311,9 @@ function Step4a({ formData, setFormData, onSubmit }) {
     return () => clearInterval(interval);
   }, [setFormData]);
 
-  const canSubmit = addressSelected && formData.privacyChecked;
+  const hasHouseNumberError = addressSelected && !formData.housenumber;
+
+  const canSubmit = addressSelected && formData.privacyChecked && !hasHouseNumberError;
 
   const handleSubmit = () => {
     if (!canSubmit) return;
@@ -327,7 +329,7 @@ function Step4a({ formData, setFormData, onSubmit }) {
           <input
             ref={addressInputRef}
             type="text"
-            className="pico-input"
+            className={`pico-input ${hasHouseNumberError ? 'pico-input-error' : ''}`}
             placeholder="Ihre Adresse*"
             value={formData.address}
             onChange={(e) => {
@@ -336,6 +338,9 @@ function Step4a({ formData, setFormData, onSubmit }) {
             }}
           />
           <span className="pico-input-icon"><IconLocation /></span>
+          {hasHouseNumberError && (
+            <p className="pico-error-text">Bitte geben Sie eine Hausnummer an.</p>
+          )}
         </div>
         <p className="pico-field-hint">
           Wir benötigen Ihre Adresse ausschließlich für Ihren persönlichen Wärmepumpen-Check.
@@ -437,10 +442,13 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
     return () => clearInterval(interval);
   }, [setFormData]);
 
+  const hasHouseNumberError = addressSelected && !formData.housenumber;
+
   const canSubmit =
     formData.firstName &&
     formData.lastName &&
     addressSelected &&
+    !hasHouseNumberError &&
     formData.email &&
     formData.phone &&
     formData.privacyChecked;
@@ -524,7 +532,7 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
         <input
           ref={addressInputRef}
           type="text"
-          className="pico-input"
+          className={`pico-input ${hasHouseNumberError ? 'pico-input-error' : ''}`}
           placeholder="Ihre Adresse*"
           value={formData.address}
           onChange={(e) => {
@@ -533,6 +541,9 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
           }}
         />
         <span className="pico-input-icon"><IconLocation /></span>
+        {hasHouseNumberError && (
+          <p className="pico-error-text">Bitte geben Sie eine Hausnummer an.</p>
+        )}
       </div>
 
       <div className="pico-input-wrap">
