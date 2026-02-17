@@ -521,7 +521,7 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
       HouseDetails: {
         Country: 'de',
         Zipcode: formData.zipcode || '',
-        Housenumber: formData.housenumber || '',
+        HouseNumber: formData.housenumber || '',
         HouseNumberAddition: '',
         Street: formData.street || '',
         City: formData.city || '',
@@ -538,18 +538,26 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
         body: JSON.stringify(body),
       });
 
-      const data = await res.json();
+      if (!res.ok) {
+        console.warn(`Pico API returned status ${res.status}`);
+        onBuildingNotFound();
+        return;
+      }
+
+      let data = {};
+      try {
+        data = await res.json();
+      } catch (e) {
+        console.warn('Pico API: Response is not valid JSON, but status was OK');
+      }
 
       if (data.error === 'Could not find a building with this address') {
         onBuildingNotFound();
-      } else if (res.ok) {
-        onSuccess();
       } else {
-        /* Treat other errors as building-not-found for safety */
-        onBuildingNotFound();
+        onSuccess();
       }
     } catch (err) {
-      console.error('Pico API error:', err);
+      console.error('Pico API network/fetch error:', err);
       onBuildingNotFound();
     } finally {
       setSubmitting(false);
