@@ -519,7 +519,7 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
       Email: formData.email || '',
       Phonenumber: formData.phone || '',
       HouseDetails: {
-        Country: 'de',
+        Country: 'DE',
         Zipcode: formData.zipcode || '',
         HouseNumber: formData.housenumber || '',
         HouseNumberAddition: '',
