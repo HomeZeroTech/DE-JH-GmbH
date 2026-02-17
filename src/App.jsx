@@ -311,19 +311,21 @@ function Step4a({ formData, setFormData, onSubmit }) {
     return () => clearInterval(interval);
   }, [setFormData]);
 
+  const [touched, setTouched] = useState({});
+
   const emailIsValid = !formData.email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
-  const emailError = formData.email && !emailIsValid;
+  const emailError = !emailIsValid;
+  const addressError = !addressSelected;
+  const privacyError = !formData.privacyChecked;
 
-  const [triedToSubmit, setTriedToSubmit] = useState(false);
+  const submitActive = addressSelected && formData.privacyChecked && emailIsValid;
 
-  const canSubmit = addressSelected && formData.privacyChecked;
-  const submitActive = canSubmit && emailIsValid;
+  const handleBlur = (field) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+  };
 
   const handleSubmit = () => {
-    if (!submitActive) {
-      if (canSubmit) setTriedToSubmit(true);
-      return;
-    }
+    if (!submitActive) return;
     onSubmit();
   };
 
@@ -336,15 +338,19 @@ function Step4a({ formData, setFormData, onSubmit }) {
           <input
             ref={addressInputRef}
             type="text"
-            className="pico-input"
+            className={`pico-input ${addressError && touched.address ? "pico-input-error" : ""}`}
             placeholder="Ihre Adresse*"
             value={formData.address}
+            onBlur={() => handleBlur('address')}
             onChange={(e) => {
               setAddressSelected(false);
               setFormData((p) => ({ ...p, address: e.target.value }));
             }}
           />
           <span className="pico-input-icon"><IconLocation /></span>
+          {addressError && touched.address && (
+            <p className="pico-error-text">Bitte wählen Sie eine Adresse aus.</p>
+          )}
         </div>
         <p className="pico-field-hint">
           Wir benötigen Ihre Adresse ausschließlich für Ihren persönlichen Wärmepumpen-Check.
@@ -354,13 +360,14 @@ function Step4a({ formData, setFormData, onSubmit }) {
       <div className="pico-input-wrap">
         <input
           type="email"
-          className={`pico-input ${emailError && triedToSubmit ? "pico-input-error" : ""}`}
+          className={`pico-input ${emailError && touched.email ? "pico-input-error" : ""}`}
           placeholder="Ihre E-Mail-Adresse (optional)"
           value={formData.email}
+          onBlur={() => handleBlur('email')}
           onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
         />
         <span className="pico-input-icon"><IconEmail /></span>
-        {emailError && triedToSubmit && (
+        {emailError && touched.email && (
           <p className="pico-error-text">
             Bitte geben Sie eine gültige E-Mail-Adresse an.
           </p>
@@ -384,16 +391,22 @@ function Step4a({ formData, setFormData, onSubmit }) {
           type="checkbox"
           checked={formData.privacyChecked}
           onChange={(e) => setFormData((p) => ({ ...p, privacyChecked: e.target.checked }))}
+          onBlur={() => handleBlur('privacyChecked')}
         />
         <span className="pico-checkbox-custom" />
         <span className="pico-checkbox-text">
           Ich habe die <a href="https://www.juergenhohnen.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.<span className="pico-required">*</span>
         </span>
       </label>
+      {privacyError && touched.privacyChecked && (
+        <p className="pico-error-text">
+          Bitte stimmen Sie der Datenschutzerklärung zu.
+        </p>
+      )}
 
       <button
         className={`pico-btn-primary ${submitActive ? 'pico-btn-primary--active' : ''}`}
-        disabled={!canSubmit}
+        disabled={!submitActive}
         onClick={handleSubmit}
       >
         Check starten
@@ -405,11 +418,10 @@ function Step4a({ formData, setFormData, onSubmit }) {
 /* ──────────────────────── STEP 4b ──────────────────────────── */
 
 function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
-  const [triedToSubmit, setTriedToSubmit] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const addressInputRef = useRef(null);
   const autocompleteRef = useRef(null);
   const [addressSelected, setAddressSelected] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
 
   /* Init Google Maps Autocomplete */
   useEffect(() => {
@@ -452,28 +464,33 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
     return () => clearInterval(interval);
   }, [setFormData]);
 
+  const [touched, setTouched] = useState({});
   const sanitizedPhone = formData.phone.replace(/\s/g, "");
   const phoneIsValid = /^\+?[0-9]{6,15}$/.test(sanitizedPhone);
-  const phoneError = formData.phone && !phoneIsValid;
+  const phoneError = !phoneIsValid;
 
   const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
-  const emailError = formData.email && !emailIsValid;
+  const emailError = !emailIsValid;
 
-  const canSubmit =
-    formData.firstName &&
-    formData.lastName &&
-    addressSelected &&
-    formData.email &&
-    formData.phone &&
-    formData.privacyChecked;
+  const firstNameError = !formData.firstName;
+  const lastNameError = !formData.lastName;
+  const addressError = !addressSelected;
+  const privacyError = !formData.privacyChecked;
 
-  const submitActive = canSubmit && phoneIsValid && emailIsValid;
+  const submitActive =
+    !firstNameError &&
+    !lastNameError &&
+    !addressError &&
+    emailIsValid &&
+    phoneIsValid &&
+    !privacyError;
+
+  const handleBlur = (field) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+  };
 
   const handleSubmit = async () => {
-    if (!submitActive || submitting) {
-      if (canSubmit && !submitting) setTriedToSubmit(true);
-      return;
-    }
+    if (!submitActive || submitting) return;
     setSubmitting(true);
 
     const body = {
@@ -528,22 +545,30 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
         <div className="pico-input-wrap">
           <input
             type="text"
-            className="pico-input"
+            className={`pico-input ${firstNameError && touched.firstName ? "pico-input-error" : ""}`}
             placeholder="Vorname*"
             value={formData.firstName}
+            onBlur={() => handleBlur('firstName')}
             onChange={(e) => setFormData((p) => ({ ...p, firstName: e.target.value }))}
           />
           <span className="pico-input-icon"><IconUser /></span>
+          {firstNameError && touched.firstName && (
+            <p className="pico-error-text">Bitte Vorname angeben.</p>
+          )}
         </div>
         <div className="pico-input-wrap">
           <input
             type="text"
-            className="pico-input"
+            className={`pico-input ${lastNameError && touched.lastName ? "pico-input-error" : ""}`}
             placeholder="Nachname*"
             value={formData.lastName}
+            onBlur={() => handleBlur('lastName')}
             onChange={(e) => setFormData((p) => ({ ...p, lastName: e.target.value }))}
           />
           <span className="pico-input-icon"><IconUser /></span>
+          {lastNameError && touched.lastName && (
+            <p className="pico-error-text">Bitte Nachname angeben.</p>
+          )}
         </div>
       </div>
 
@@ -551,27 +576,32 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
         <input
           ref={addressInputRef}
           type="text"
-          className="pico-input"
+          className={`pico-input ${addressError && touched.address ? "pico-input-error" : ""}`}
           placeholder="Ihre Adresse*"
           value={formData.address}
+          onBlur={() => handleBlur('address')}
           onChange={(e) => {
             setAddressSelected(false);
             setFormData((p) => ({ ...p, address: e.target.value }));
           }}
         />
         <span className="pico-input-icon"><IconLocation /></span>
+        {addressError && touched.address && (
+          <p className="pico-error-text">Bitte wählen Sie eine Adresse aus.</p>
+        )}
       </div>
 
       <div className="pico-input-wrap">
         <input
           type="email"
-          className={`pico-input ${emailError && triedToSubmit ? "pico-input-error" : ""}`}
+          className={`pico-input ${emailError && touched.email ? "pico-input-error" : ""}`}
           placeholder="Ihre E-Mail-Adresse*"
           value={formData.email}
+          onBlur={() => handleBlur('email')}
           onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
         />
         <span className="pico-input-icon"><IconEmail /></span>
-        {emailError && triedToSubmit && (
+        {emailError && touched.email && (
           <p className="pico-error-text">
             Bitte geben Sie eine gültige E-Mail-Adresse an.
           </p>
@@ -581,13 +611,14 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
       <div className="pico-input-wrap">
         <input
           type="tel"
-          className={`pico-input ${phoneError && triedToSubmit ? "pico-input-error" : ""}`}
+          className={`pico-input ${phoneError && touched.phone ? "pico-input-error" : ""}`}
           placeholder="Ihre Telefonnummer*"
           value={formData.phone}
+          onBlur={() => handleBlur('phone')}
           onChange={(e) => setFormData((p) => ({ ...p, phone: e.target.value }))}
         />
         <span className="pico-input-icon"><IconPhoneField /></span>
-        {phoneError && triedToSubmit && (
+        {phoneError && touched.phone && (
           <p className="pico-error-text">
             Bitte geben Sie eine gültige Telefonnummer an.
           </p>
@@ -608,16 +639,22 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
           type="checkbox"
           checked={formData.privacyChecked}
           onChange={(e) => setFormData((p) => ({ ...p, privacyChecked: e.target.checked }))}
+          onBlur={() => handleBlur('privacyChecked')}
         />
         <span className="pico-checkbox-custom" />
         <span className="pico-checkbox-text">
           Ich habe die <a href="https://www.juergenhohnen.de/datenschutz/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.<span className="pico-required">*</span>
         </span>
       </label>
+      {privacyError && touched.privacyChecked && (
+        <p className="pico-error-text" style={{ marginTop: "-2px", marginBottom: "8px" }}>
+          Bitte stimmen Sie der Datenschutzerklärung zu.
+        </p>
+      )}
 
       <button
         className={`pico-btn-primary ${submitActive ? 'pico-btn-primary--active' : ''}`}
-        disabled={!canSubmit || submitting}
+        disabled={!submitActive || submitting}
         onClick={handleSubmit}
       >
         {submitting ? 'Wird gesendet…' : 'Rückruf anfordern'}
