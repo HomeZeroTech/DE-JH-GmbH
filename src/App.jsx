@@ -804,7 +804,7 @@ function App() {
   };
 
   const showBack = ['2', '3', '4a', '4b'].includes(step);
-  const showClose = ['5a', '5b'].includes(step);
+  const showClose = false; /* Quit option removed for 5a/5b */
   const showProgress = !['5a', '5b'].includes(step);
 
   /* Step 4a submit: trigger hidden hz-embed */
