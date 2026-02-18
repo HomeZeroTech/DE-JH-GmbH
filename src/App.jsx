@@ -739,6 +739,7 @@ const INITIAL_FORM = {
 function App() {
   const [step, setStep] = useState('1');
   const [formData, setFormData] = useState(INITIAL_FORM);
+  const [isClosed, setIsClosed] = useState(false);
   const hzContainerRef = useRef(null);
 
   /* Load embed.js for Google Maps API + hz-embed */
@@ -799,8 +800,7 @@ function App() {
   };
 
   const handleClose = () => {
-    setStep('1');
-    setFormData(INITIAL_FORM);
+    setIsClosed(true);
   };
 
   const showBack = ['2', '3', '4a', '4b'].includes(step);
@@ -857,6 +857,8 @@ function App() {
     const fullUrl = `${baseUrl}&${params.toString()}`;
     window.open(fullUrl, '_blank');
   };
+
+  if (isClosed) return null;
 
   return (
     <div className="pico-widget">
