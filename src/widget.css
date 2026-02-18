@@ -260,12 +260,12 @@
 }
 
 .pico-step-form .pico-step-title {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .pico-input-wrap {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .pico-input {
@@ -296,15 +296,16 @@
 .pico-error-text {
   color: #C0392B;
   font-size: 11px;
-  margin: 4px 0 0;
+  margin: 2px 0 0;
   font-weight: 500;
   text-align: left;
+  line-height: 1.2;
 }
 
 .pico-input-icon {
   position: absolute;
   right: 14px;
-  top: 50%;
+  top: 22px;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
@@ -321,7 +322,7 @@
   background: var(--pw-light-blue);
   border: 1.5px solid #C4D8EE;
   border-radius: var(--pw-radius-input);
-  padding: 12px 12px 8px;
+  padding: 10px 10px 6px;
 }
 
 .pico-field-group--highlight .pico-input-wrap {
@@ -355,7 +356,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .pico-info-line {
@@ -380,9 +381,9 @@
   align-items: flex-start;
   gap: 10px;
   cursor: pointer;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   font-size: 12px;
-  line-height: 1.45;
+  line-height: 1.35;
   color: var(--pw-navy);
 }
 
