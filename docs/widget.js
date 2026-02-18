@@ -21197,50 +21197,280 @@ else {
     }
   };
 }
-const mk = () => /* @__PURE__ */ _.jsx("svg", { width: "22", height: "22", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "2.2", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ _.jsx("path", { d: "M19 12H5M12 19l-7-7 7-7" }) }), yk = () => /* @__PURE__ */ _.jsxs("svg", { width: "26", height: "26", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("path", { d: "M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10z" }),
-  /* @__PURE__ */ _.jsx("path", { d: "M9 22V12h6v10" })
-] }), gk = () => /* @__PURE__ */ _.jsxs("svg", { width: "26", height: "26", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("polyline", { points: "3 17 9 11 13 15 21 7" }),
-  /* @__PURE__ */ _.jsx("polyline", { points: "14 7 21 7 21 14" })
-] }), Sk = () => /* @__PURE__ */ _.jsxs("svg", { width: "26", height: "26", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }),
-  /* @__PURE__ */ _.jsx("path", { d: "M9 12l2 2 4-4" })
-] }), Ek = () => /* @__PURE__ */ _.jsx("svg", { width: "26", height: "26", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ _.jsx("path", { d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z" }) }), Ck = () => /* @__PURE__ */ _.jsxs("svg", { width: "26", height: "26", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "10" }),
-  /* @__PURE__ */ _.jsx("path", { d: "M9 12l2 2 4-4" })
-] }), Rk = () => /* @__PURE__ */ _.jsxs("svg", { width: "26", height: "26", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "10" }),
-  /* @__PURE__ */ _.jsx("path", { d: "M15 9l-6 6M9 9l6 6" })
-] }), xk = () => /* @__PURE__ */ _.jsxs("svg", { width: "26", height: "26", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("rect", { x: "2", y: "3", width: "20", height: "14", rx: "2" }),
-  /* @__PURE__ */ _.jsx("line", { x1: "8", y1: "21", x2: "16", y2: "21" }),
-  /* @__PURE__ */ _.jsx("line", { x1: "12", y1: "17", x2: "12", y2: "21" })
-] }), Tk = () => /* @__PURE__ */ _.jsx("svg", { width: "26", height: "26", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ _.jsx("path", { d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" }) }), dx = () => /* @__PURE__ */ _.jsxs("svg", { width: "22", height: "22", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "10", r: "3" }),
-  /* @__PURE__ */ _.jsx("path", { d: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" })
-] }), m0 = () => /* @__PURE__ */ _.jsxs("svg", { width: "22", height: "22", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("rect", { x: "2", y: "4", width: "20", height: "16", rx: "2" }),
-  /* @__PURE__ */ _.jsx("path", { d: "M22 7l-10 6L2 7" })
-] }), px = () => /* @__PURE__ */ _.jsxs("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "10" }),
-  /* @__PURE__ */ _.jsx("line", { x1: "4.93", y1: "4.93", x2: "19.07", y2: "19.07" })
-] }), vx = () => /* @__PURE__ */ _.jsxs("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }),
-  /* @__PURE__ */ _.jsx("path", { d: "M9 12l2 2 4-4" })
-] }), ux = () => /* @__PURE__ */ _.jsxs("svg", { width: "22", height: "22", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("path", { d: "M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" }),
-  /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "7", r: "4" })
-] }), wk = () => /* @__PURE__ */ _.jsx("svg", { width: "22", height: "22", viewBox: "0 0 24 24", fill: "none", stroke: "#004A8F", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round", children: /* @__PURE__ */ _.jsx("path", { d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" }) }), bk = () => /* @__PURE__ */ _.jsxs("svg", { width: "64", height: "64", viewBox: "0 0 24 24", fill: "none", stroke: "#008A26", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "10" }),
-  /* @__PURE__ */ _.jsx("path", { d: "M9 12l2 2 4-4" })
-] }), _k = () => /* @__PURE__ */ _.jsxs("svg", { width: "64", height: "64", viewBox: "0 0 24 24", fill: "none", stroke: "#D4782F", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ _.jsx("path", { d: "M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" }),
-  /* @__PURE__ */ _.jsx("line", { x1: "12", y1: "9", x2: "12", y2: "13" }),
-  /* @__PURE__ */ _.jsx("line", { x1: "12", y1: "17", x2: "12.01", y2: "17" })
-] }), kk = () => /* @__PURE__ */ _.jsx("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", children: /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "11", stroke: "#C0C8D0", strokeWidth: "1.5" }) }), Dk = () => /* @__PURE__ */ _.jsxs("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", children: [
+const mk = () => /* @__PURE__ */ _.jsx(
+  "svg",
+  {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "2.2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: /* @__PURE__ */ _.jsx("path", { d: "M19 12H5M12 19l-7-7 7-7" })
+  }
+), yk = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "26",
+    height: "26",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("path", { d: "M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10z" }),
+      /* @__PURE__ */ _.jsx("path", { d: "M9 22V12h6v10" })
+    ]
+  }
+), gk = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "26",
+    height: "26",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("polyline", { points: "3 17 9 11 13 15 21 7" }),
+      /* @__PURE__ */ _.jsx("polyline", { points: "14 7 21 7 21 14" })
+    ]
+  }
+), Sk = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "26",
+    height: "26",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }),
+      /* @__PURE__ */ _.jsx("path", { d: "M9 12l2 2 4-4" })
+    ]
+  }
+), Ek = () => /* @__PURE__ */ _.jsx(
+  "svg",
+  {
+    width: "26",
+    height: "26",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: /* @__PURE__ */ _.jsx("path", { d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3z" })
+  }
+), Ck = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "26",
+    height: "26",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "10" }),
+      /* @__PURE__ */ _.jsx("path", { d: "M9 12l2 2 4-4" })
+    ]
+  }
+), Rk = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "26",
+    height: "26",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "10" }),
+      /* @__PURE__ */ _.jsx("path", { d: "M15 9l-6 6M9 9l6 6" })
+    ]
+  }
+), xk = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "26",
+    height: "26",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("rect", { x: "2", y: "3", width: "20", height: "14", rx: "2" }),
+      /* @__PURE__ */ _.jsx("line", { x1: "8", y1: "21", x2: "16", y2: "21" }),
+      /* @__PURE__ */ _.jsx("line", { x1: "12", y1: "17", x2: "12", y2: "21" })
+    ]
+  }
+), Tk = () => /* @__PURE__ */ _.jsx(
+  "svg",
+  {
+    width: "26",
+    height: "26",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: /* @__PURE__ */ _.jsx("path", { d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" })
+  }
+), dx = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "10", r: "3" }),
+      /* @__PURE__ */ _.jsx("path", { d: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" })
+    ]
+  }
+), m0 = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("rect", { x: "2", y: "4", width: "20", height: "16", rx: "2" }),
+      /* @__PURE__ */ _.jsx("path", { d: "M22 7l-10 6L2 7" })
+    ]
+  }
+), px = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "18",
+    height: "18",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "10" }),
+      /* @__PURE__ */ _.jsx("line", { x1: "4.93", y1: "4.93", x2: "19.07", y2: "19.07" })
+    ]
+  }
+), vx = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "18",
+    height: "18",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }),
+      /* @__PURE__ */ _.jsx("path", { d: "M9 12l2 2 4-4" })
+    ]
+  }
+), ux = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("path", { d: "M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" }),
+      /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "7", r: "4" })
+    ]
+  }
+), wk = () => /* @__PURE__ */ _.jsx(
+  "svg",
+  {
+    width: "22",
+    height: "22",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#004A8F",
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: /* @__PURE__ */ _.jsx("path", { d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" })
+  }
+), bk = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "64",
+    height: "64",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#008A26",
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "10" }),
+      /* @__PURE__ */ _.jsx("path", { d: "M9 12l2 2 4-4" })
+    ]
+  }
+), _k = () => /* @__PURE__ */ _.jsxs(
+  "svg",
+  {
+    width: "64",
+    height: "64",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#D4782F",
+    strokeWidth: "1.5",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    children: [
+      /* @__PURE__ */ _.jsx("path", { d: "M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" }),
+      /* @__PURE__ */ _.jsx("line", { x1: "12", y1: "9", x2: "12", y2: "13" }),
+      /* @__PURE__ */ _.jsx("line", { x1: "12", y1: "17", x2: "12.01", y2: "17" })
+    ]
+  }
+), kk = () => /* @__PURE__ */ _.jsx("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", children: /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "11", stroke: "#C0C8D0", strokeWidth: "1.5" }) }), Dk = () => /* @__PURE__ */ _.jsxs("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", children: [
   /* @__PURE__ */ _.jsx("circle", { cx: "12", cy: "12", r: "12", fill: "#004A8F" }),
-  /* @__PURE__ */ _.jsx("path", { d: "M8 12.5l2.5 2.5 5-5", stroke: "white", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" })
+  /* @__PURE__ */ _.jsx(
+    "path",
+    {
+      d: "M8 12.5l2.5 2.5 5-5",
+      stroke: "white",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }
+  )
 ] });
 function Ok({ currentStep: F }) {
   const O = { 1: 0, 2: 1, 3: 2, "4a": 3, "4b": 3 }[F] ?? 0, Ae = O >= 3 ? 4 : 3;
@@ -21255,8 +21485,16 @@ function Ok({ currentStep: F }) {
 const Nk = [
   { id: "renovate", label: "mein Haus modernisieren.", Icon: yk },
   { id: "costs", label: "dauerhaft Heizkosten senken.", Icon: gk },
-  { id: "independent", label: "unabhängiger von Öl & Gas werden.", Icon: Sk },
-  { id: "replace", label: "eine alte oder defekte Heizung ersetzen.", Icon: Ek }
+  {
+    id: "independent",
+    label: "unabhängiger von Öl & Gas werden.",
+    Icon: Sk
+  },
+  {
+    id: "replace",
+    label: "eine alte oder defekte Heizung ersetzen.",
+    Icon: Ek
+  }
 ];
 function Lk({ interests: F, toggleInterest: J, onNext: O }) {
   const Ae = F.length > 0;
@@ -21296,14 +21534,30 @@ function Mk({ onSelect: F }) {
   return /* @__PURE__ */ _.jsxs("div", { className: "pico-step", children: [
     /* @__PURE__ */ _.jsx("h2", { className: "pico-step-title", children: "Sind Sie Eigentümer der Immobilie?" }),
     /* @__PURE__ */ _.jsxs("div", { className: "pico-options pico-options--spaced", children: [
-      /* @__PURE__ */ _.jsxs("button", { type: "button", className: "pico-option-card", onClick: () => F(!0), children: [
-        /* @__PURE__ */ _.jsx("span", { className: "pico-option-icon", children: /* @__PURE__ */ _.jsx(Ck, {}) }),
-        /* @__PURE__ */ _.jsx("span", { className: "pico-option-label", children: "Ja" })
-      ] }),
-      /* @__PURE__ */ _.jsxs("button", { type: "button", className: "pico-option-card", onClick: () => F(!1), children: [
-        /* @__PURE__ */ _.jsx("span", { className: "pico-option-icon", children: /* @__PURE__ */ _.jsx(Rk, {}) }),
-        /* @__PURE__ */ _.jsx("span", { className: "pico-option-label", children: "Nein" })
-      ] })
+      /* @__PURE__ */ _.jsxs(
+        "button",
+        {
+          type: "button",
+          className: "pico-option-card",
+          onClick: () => F(!0),
+          children: [
+            /* @__PURE__ */ _.jsx("span", { className: "pico-option-icon", children: /* @__PURE__ */ _.jsx(Ck, {}) }),
+            /* @__PURE__ */ _.jsx("span", { className: "pico-option-label", children: "Ja" })
+          ]
+        }
+      ),
+      /* @__PURE__ */ _.jsxs(
+        "button",
+        {
+          type: "button",
+          className: "pico-option-card",
+          onClick: () => F(!1),
+          children: [
+            /* @__PURE__ */ _.jsx("span", { className: "pico-option-icon", children: /* @__PURE__ */ _.jsx(Rk, {}) }),
+            /* @__PURE__ */ _.jsx("span", { className: "pico-option-label", children: "Nein" })
+          ]
+        }
+      )
     ] })
   ] });
 }
@@ -21311,14 +21565,30 @@ function zk({ onSelect: F }) {
   return /* @__PURE__ */ _.jsxs("div", { className: "pico-step", children: [
     /* @__PURE__ */ _.jsx("h2", { className: "pico-step-title", children: "Wie möchten Sie fortfahren?" }),
     /* @__PURE__ */ _.jsxs("div", { className: "pico-options pico-options--spaced", children: [
-      /* @__PURE__ */ _.jsxs("button", { type: "button", className: "pico-option-card", onClick: () => F("online"), children: [
-        /* @__PURE__ */ _.jsx("span", { className: "pico-option-icon", children: /* @__PURE__ */ _.jsx(xk, {}) }),
-        /* @__PURE__ */ _.jsx("span", { className: "pico-option-label", children: "Online-Check starten & Preisschätzung erhalten" })
-      ] }),
-      /* @__PURE__ */ _.jsxs("button", { type: "button", className: "pico-option-card", onClick: () => F("callback"), children: [
-        /* @__PURE__ */ _.jsx("span", { className: "pico-option-icon", children: /* @__PURE__ */ _.jsx(Tk, {}) }),
-        /* @__PURE__ */ _.jsx("span", { className: "pico-option-label", children: "Rückruf anfordern für ein persönliches Gespräch" })
-      ] })
+      /* @__PURE__ */ _.jsxs(
+        "button",
+        {
+          type: "button",
+          className: "pico-option-card",
+          onClick: () => F("online"),
+          children: [
+            /* @__PURE__ */ _.jsx("span", { className: "pico-option-icon", children: /* @__PURE__ */ _.jsx(xk, {}) }),
+            /* @__PURE__ */ _.jsx("span", { className: "pico-option-label", children: "Online-Check starten & Preisschätzung erhalten" })
+          ]
+        }
+      ),
+      /* @__PURE__ */ _.jsxs(
+        "button",
+        {
+          type: "button",
+          className: "pico-option-card",
+          onClick: () => F("callback"),
+          children: [
+            /* @__PURE__ */ _.jsx("span", { className: "pico-option-icon", children: /* @__PURE__ */ _.jsx(Tk, {}) }),
+            /* @__PURE__ */ _.jsx("span", { className: "pico-option-label", children: "Rückruf anfordern für ein persönliches Gespräch" })
+          ]
+        }
+      )
     ] })
   ] });
 }
@@ -21328,15 +21598,20 @@ function jk({ formData: F, setFormData: J, onSubmit: O }) {
     let Ne;
     const dt = () => {
       if (window.google && window.google.maps && window.google.maps.places && Ae.current && !Ze.current) {
-        const Mt = new window.google.maps.places.Autocomplete(Ae.current, {
-          types: ["address"],
-          componentRestrictions: { country: "de" }
-        });
+        const Mt = new window.google.maps.places.Autocomplete(
+          Ae.current,
+          {
+            types: ["address"],
+            componentRestrictions: { country: "de" }
+          }
+        );
         Mt.addListener("place_changed", () => {
           const Ve = Mt.getPlace();
           if (!Ve.address_components) return;
           const xe = (ot) => {
-            const se = Ve.address_components.find((nt) => nt.types.includes(ot));
+            const se = Ve.address_components.find(
+              (nt) => nt.types.includes(ot)
+            );
             return se ? se.long_name : "";
           };
           J((ot) => ({
@@ -21379,7 +21654,10 @@ function jk({ formData: F, setFormData: J, onSubmit: O }) {
             value: F.address,
             onBlur: () => X("address"),
             onChange: (Ne) => {
-              Ye(!1), J((dt) => ({ ...dt, address: Ne.target.value }));
+              Ye(!1), J((dt) => ({
+                ...dt,
+                address: Ne.target.value
+              }));
             }
           }
         ),
@@ -21426,15 +21704,28 @@ function jk({ formData: F, setFormData: J, onSubmit: O }) {
         {
           type: "checkbox",
           checked: F.privacyChecked,
-          onChange: (Ne) => J((dt) => ({ ...dt, privacyChecked: Ne.target.checked })),
+          onChange: (Ne) => J((dt) => ({
+            ...dt,
+            privacyChecked: Ne.target.checked
+          })),
           onBlur: () => X("privacyChecked")
         }
       ),
       /* @__PURE__ */ _.jsx("span", { className: "pico-checkbox-custom" }),
       /* @__PURE__ */ _.jsxs("span", { className: "pico-checkbox-text", children: [
-        "Ich habe die ",
-        /* @__PURE__ */ _.jsx("a", { href: "https://www.juergenhohnen.de/datenschutz/", target: "_blank", rel: "noopener noreferrer", children: "Datenschutzerklärung" }),
-        " gelesen und stimme der Verarbeitung meiner Daten zu.",
+        "Ich habe die",
+        " ",
+        /* @__PURE__ */ _.jsx(
+          "a",
+          {
+            href: "https://www.juergenhohnen.de/datenschutz/",
+            target: "_blank",
+            rel: "noopener noreferrer",
+            children: "Datenschutzerklärung"
+          }
+        ),
+        " ",
+        "gelesen und stimme der Verarbeitung meiner Daten zu.",
         /* @__PURE__ */ _.jsx("span", { className: "pico-required", children: "*" })
       ] })
     ] }),
@@ -21455,15 +21746,20 @@ function Ak({ formData: F, setFormData: J, onSuccess: O, onBuildingNotFound: Ae 
     let Se;
     const rt = () => {
       if (window.google && window.google.maps && window.google.maps.places && Ye.current && !S.current) {
-        const St = new window.google.maps.places.Autocomplete(Ye.current, {
-          types: ["address"],
-          componentRestrictions: { country: "de" }
-        });
+        const St = new window.google.maps.places.Autocomplete(
+          Ye.current,
+          {
+            types: ["address"],
+            componentRestrictions: { country: "de" }
+          }
+        );
         St.addListener("place_changed", () => {
           const Wt = St.getPlace();
           if (!Wt.address_components) return;
           const zt = (pt) => {
-            const ze = Wt.address_components.find((jt) => jt.types.includes(pt));
+            const ze = Wt.address_components.find(
+              (jt) => jt.types.includes(pt)
+            );
             return ze ? ze.long_name : "";
           };
           J((pt) => ({
@@ -21504,22 +21800,24 @@ function Ak({ formData: F, setFormData: J, onSuccess: O, onBuildingNotFound: Ae 
       HouseDetails: {
         Country: "DE",
         Zipcode: F.zipcode || "",
-        HouseNumber: F.housenumber || "",
+        Housenumber: F.housenumber || "",
         HouseNumberAddition: "",
         Street: F.street || "",
         City: F.city || ""
       }
     };
-    console.log("[Pico API] Sending payload:", JSON.stringify(Se, null, 2));
     try {
-      const rt = await fetch("https://pico.homezero.nl/rest/pico/v1/assignments/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-API-Key": "36FMhB7kRc0rupVTEROKMzIdJNK2efuA"
-        },
-        body: JSON.stringify(Se)
-      });
+      const rt = await fetch(
+        "https://pico.homezero.nl/rest/pico/v1/assignments/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-API-Key": "36FMhB7kRc0rupVTEROKMzIdJNK2efuA"
+          },
+          body: JSON.stringify(Se)
+        }
+      );
       if (!rt.ok) {
         console.warn(`Pico API returned status ${rt.status}`), Ae();
         return;
@@ -21528,7 +21826,9 @@ function Ak({ formData: F, setFormData: J, onSuccess: O, onBuildingNotFound: Ae 
       try {
         St = await rt.json();
       } catch {
-        console.warn("Pico API: Response is not valid JSON, but status was OK");
+        console.warn(
+          "Pico API: Response is not valid JSON, but status was OK"
+        );
       }
       St.error === "Could not find a building with this address" ? Ae() : O();
     } catch (rt) {
@@ -21549,7 +21849,10 @@ function Ak({ formData: F, setFormData: J, onSuccess: O, onBuildingNotFound: Ae 
             placeholder: "Vorname*",
             value: F.firstName,
             onBlur: () => se("firstName"),
-            onChange: (Se) => J((rt) => ({ ...rt, firstName: Se.target.value }))
+            onChange: (Se) => J((rt) => ({
+              ...rt,
+              firstName: Se.target.value
+            }))
           }
         ),
         /* @__PURE__ */ _.jsx("span", { className: "pico-input-icon", children: /* @__PURE__ */ _.jsx(ux, {}) }),
@@ -21564,7 +21867,10 @@ function Ak({ formData: F, setFormData: J, onSuccess: O, onBuildingNotFound: Ae 
             placeholder: "Nachname*",
             value: F.lastName,
             onBlur: () => se("lastName"),
-            onChange: (Se) => J((rt) => ({ ...rt, lastName: Se.target.value }))
+            onChange: (Se) => J((rt) => ({
+              ...rt,
+              lastName: Se.target.value
+            }))
           }
         ),
         /* @__PURE__ */ _.jsx("span", { className: "pico-input-icon", children: /* @__PURE__ */ _.jsx(ux, {}) }),
@@ -21637,19 +21943,39 @@ function Ak({ formData: F, setFormData: J, onSuccess: O, onBuildingNotFound: Ae 
         {
           type: "checkbox",
           checked: F.privacyChecked,
-          onChange: (Se) => J((rt) => ({ ...rt, privacyChecked: Se.target.checked })),
+          onChange: (Se) => J((rt) => ({
+            ...rt,
+            privacyChecked: Se.target.checked
+          })),
           onBlur: () => se("privacyChecked")
         }
       ),
       /* @__PURE__ */ _.jsx("span", { className: "pico-checkbox-custom" }),
       /* @__PURE__ */ _.jsxs("span", { className: "pico-checkbox-text", children: [
-        "Ich habe die ",
-        /* @__PURE__ */ _.jsx("a", { href: "https://www.juergenhohnen.de/datenschutz/", target: "_blank", rel: "noopener noreferrer", children: "Datenschutzerklärung" }),
-        " gelesen und stimme der Verarbeitung meiner Daten zu.",
+        "Ich habe die",
+        " ",
+        /* @__PURE__ */ _.jsx(
+          "a",
+          {
+            href: "https://www.juergenhohnen.de/datenschutz/",
+            target: "_blank",
+            rel: "noopener noreferrer",
+            children: "Datenschutzerklärung"
+          }
+        ),
+        " ",
+        "gelesen und stimme der Verarbeitung meiner Daten zu.",
         /* @__PURE__ */ _.jsx("span", { className: "pico-required", children: "*" })
       ] })
     ] }),
-    xe && ne.privacyChecked && /* @__PURE__ */ _.jsx("p", { className: "pico-error-text", style: { marginTop: "-2px", marginBottom: "8px" }, children: "Bitte stimmen Sie der Datenschutzerklärung zu." }),
+    xe && ne.privacyChecked && /* @__PURE__ */ _.jsx(
+      "p",
+      {
+        className: "pico-error-text",
+        style: { marginTop: "-2px", marginBottom: "8px" },
+        children: "Bitte stimmen Sie der Datenschutzerklärung zu."
+      }
+    ),
     /* @__PURE__ */ _.jsx(
       "button",
       {
@@ -21725,27 +22051,48 @@ function Vk() {
     }));
   }, []), tt = () => {
     const X = { 2: "1", 3: "2", "4a": "3", "4b": "3" }[F];
-    X && ((F === "4a" || F === "4b") && Ae((ge) => ({ ...ge, address: "", street: "", housenumber: "", zipcode: "", city: "", email: "", firstName: "", lastName: "", phone: "", privacyChecked: !1 })), J(X));
+    X && ((F === "4a" || F === "4b") && Ae((ge) => ({
+      ...ge,
+      address: "",
+      street: "",
+      housenumber: "",
+      zipcode: "",
+      city: "",
+      email: "",
+      firstName: "",
+      lastName: "",
+      phone: "",
+      privacyChecked: !1
+    })), J(X));
   }, Re = ["2", "3", "4a", "4b"].includes(F), ne = !1, Ue = !["5a", "5b"].includes(F), te = () => {
     var Ne;
     try {
       const dt = (Ne = Ye.current) == null ? void 0 : Ne.querySelector("hz-embed");
       if (dt) {
-        const Ve = dt.shadowRoot || dt, xe = Ve.querySelector('input[type="text"], input[type="search"], input'), ot = Ve.querySelector("button");
+        const Ve = dt.shadowRoot || dt, xe = Ve.querySelector(
+          'input[type="text"], input[type="search"], input'
+        ), ot = Ve.querySelector("button");
         xe && (Object.getOwnPropertyDescriptor(
           window.HTMLInputElement.prototype,
           "value"
         ).set.call(xe, O.address), xe.dispatchEvent(new Event("input", { bubbles: !0 })), xe.dispatchEvent(new Event("change", { bubbles: !0 })));
-        const se = Ve.querySelectorAll('input[type="email"], input[placeholder*="mail"]');
+        const se = Ve.querySelectorAll(
+          'input[type="email"], input[placeholder*="mail"]'
+        );
         se.length > 0 && O.email && (Object.getOwnPropertyDescriptor(
           window.HTMLInputElement.prototype,
           "value"
-        ).set.call(se[0], O.email), se[0].dispatchEvent(new Event("input", { bubbles: !0 }))), setTimeout(() => {
+        ).set.call(se[0], O.email), se[0].dispatchEvent(
+          new Event("input", { bubbles: !0 })
+        )), setTimeout(() => {
           ot && ot.click();
         }, 500);
       }
     } catch (dt) {
-      console.warn("hz-embed interaction failed, opening URL directly:", dt);
+      console.warn(
+        "hz-embed interaction failed, opening URL directly:",
+        dt
+      );
     }
     const ie = new URLSearchParams();
     O.street && ie.set("street", O.street), O.housenumber && ie.set("housenumber", O.housenumber), O.zipcode && ie.set("zipcode", O.zipcode), O.city && ie.set("city", O.city), O.email && ie.set("email", O.email), ie.set("country", "de");
@@ -21754,7 +22101,15 @@ function Vk() {
   };
   return Ze ? null : /* @__PURE__ */ _.jsxs("div", { className: "pico-widget", children: [
     /* @__PURE__ */ _.jsxs("div", { className: "pico-widget-header", children: [
-      /* @__PURE__ */ _.jsx("div", { className: "pico-header-left", children: Re && /* @__PURE__ */ _.jsx("button", { className: "pico-btn-icon", onClick: tt, "aria-label": "Zurück", children: /* @__PURE__ */ _.jsx(mk, {}) }) }),
+      /* @__PURE__ */ _.jsx("div", { className: "pico-header-left", children: Re && /* @__PURE__ */ _.jsx(
+        "button",
+        {
+          className: "pico-btn-icon",
+          onClick: tt,
+          "aria-label": "Zurück",
+          children: /* @__PURE__ */ _.jsx(mk, {})
+        }
+      ) }),
       /* @__PURE__ */ _.jsx("div", { className: "pico-header-center", children: Ue && /* @__PURE__ */ _.jsx(Ok, { currentStep: F }) }),
       /* @__PURE__ */ _.jsx("div", { className: "pico-header-right", children: ne })
     ] }),
