@@ -528,8 +528,6 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
       },
     };
 
-    console.log('[Pico API] Sending payload:', JSON.stringify(body, null, 2));
-
     try {
       const res = await fetch('https://pico.homezero.nl/rest/pico/v1/assignments/create', {
         method: 'POST',
