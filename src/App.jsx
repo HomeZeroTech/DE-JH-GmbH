@@ -536,10 +536,11 @@ function Step4a({ formData, setFormData, onSubmit }) {
         !formData.email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
     const emailError = !emailIsValid;
     const addressError = !addressSelected;
+    const housenumberError = addressSelected && !formData.housenumber;
     const privacyError = !formData.privacyChecked;
 
     const submitActive =
-        addressSelected && formData.privacyChecked && emailIsValid;
+        addressSelected && !housenumberError && formData.privacyChecked && emailIsValid;
 
     const handleBlur = (field) => {
         setTouched((prev) => ({ ...prev, [field]: true }));
@@ -567,7 +568,7 @@ function Step4a({ formData, setFormData, onSubmit }) {
                     <input
                         ref={addressInputRef}
                         type="text"
-                        className={`pico-input ${addressError && touched.address ? "pico-input-error" : ""}`}
+                        className={`pico-input ${(addressError || housenumberError) && touched.address ? "pico-input-error" : ""}`}
                         placeholder="Ihre Adresse*"
                         value={formData.address}
                         onBlur={() => handleBlur("address")}
@@ -585,6 +586,11 @@ function Step4a({ formData, setFormData, onSubmit }) {
                     {addressError && touched.address && (
                         <p className="pico-error-text">
                             Bitte wählen Sie eine Adresse aus.
+                        </p>
+                    )}
+                    {housenumberError && touched.address && (
+                        <p className="pico-error-text">
+                            Bitte geben Sie eine Hausnummer an.
                         </p>
                     )}
                 </div>
@@ -741,12 +747,14 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound, onOutsid
     const firstNameError = !formData.firstName;
     const lastNameError = !formData.lastName;
     const addressError = !addressSelected;
+    const housenumberError = addressSelected && !formData.housenumber;
     const privacyError = !formData.privacyChecked;
 
     const submitActive =
         !firstNameError &&
         !lastNameError &&
         !addressError &&
+        !housenumberError &&
         emailIsValid &&
         phoneIsValid &&
         !privacyError;
@@ -884,7 +892,7 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound, onOutsid
                 <input
                     ref={addressInputRef}
                     type="text"
-                    className={`pico-input ${addressError && touched.address ? "pico-input-error" : ""}`}
+                    className={`pico-input ${(addressError || housenumberError) && touched.address ? "pico-input-error" : ""}`}
                     placeholder="Ihre Adresse*"
                     value={formData.address}
                     onBlur={() => handleBlur("address")}
@@ -899,6 +907,11 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound, onOutsid
                 {addressError && touched.address && (
                     <p className="pico-error-text">
                         Bitte wählen Sie eine Adresse aus.
+                    </p>
+                )}
+                {housenumberError && touched.address && (
+                    <p className="pico-error-text">
+                        Bitte geben Sie eine Hausnummer an.
                     </p>
                 )}
             </div>
