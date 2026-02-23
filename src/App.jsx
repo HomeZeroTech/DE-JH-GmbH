@@ -329,8 +329,8 @@ function ProgressBar({ currentStep }) {
                         i === current
                             ? "pico-progress-pill"
                             : i < current
-                              ? "pico-progress-dot pico-progress-dot--done"
-                              : "pico-progress-dot"
+                                ? "pico-progress-dot pico-progress-dot--done"
+                                : "pico-progress-dot"
                     }
                 />
             ))}
@@ -676,7 +676,7 @@ function Step4a({ formData, setFormData, onSubmit }) {
 
 /* ──────────────────────── STEP 4b ──────────────────────────── */
 
-function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
+function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound, onOutsideArea }) {
     const [submitting, setSubmitting] = useState(false);
     const addressInputRef = useRef(null);
     const autocompleteRef = useRef(null);
@@ -817,6 +817,8 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound }) {
 
             if (data.error === "Could not find a building with this address") {
                 onBuildingNotFound();
+            } else if (data.error === "address not inside the operating area") {
+                onOutsideArea();
             } else {
                 onSuccess();
             }
@@ -1024,18 +1026,38 @@ function Step5a() {
 
 /* ──────────────────────── STEP 5b ──────────────────────────── */
 
-function Step5b() {
+function Step5b({ onBack }) {
     return (
         <div className="pico-step pico-step-center">
             <IconWarningLarge />
             <h2 className="pico-step-title" style={{ marginTop: 16 }}>
                 Adresse nicht gefunden
             </h2>
-            <p className="pico-step-subtitle">
-                Leider konnten wir kein Gebäude unter dieser Adresse finden.
-                Bitte überprüfen Sie Ihre Eingabe oder kontaktieren Sie uns
-                direkt.
+            <p className="pico-step-subtitle" style={{ whiteSpace: "pre-wrap" }}>
+                {"Leider können wir Ihre Adresse nicht finden.\n\nFalls Sie einen Hausnummernzusatz haben, überprüfen Sie bitte, ob er korrekt eingegeben wurde."}
             </p>
+            <button className="pico-btn-primary" onClick={onBack} style={{ marginTop: 24 }}>
+                Zurück
+            </button>
+        </div>
+    );
+}
+
+/* ──────────────────────── STEP 5c ──────────────────────────── */
+
+function Step5c() {
+    return (
+        <div className="pico-step pico-step-center">
+            <IconWarningLarge />
+            <h2 className="pico-step-title" style={{ marginTop: 16 }}>
+                Schade! In Ihrer Region sind wir noch nicht aktiv.
+            </h2>
+            <p className="pico-step-subtitle" style={{ whiteSpace: "pre-wrap" }}>
+                {"Wir arbeiten daran, unser Einsatzgebiet zu erweitern. Schauen Sie doch bald mal wieder auf unserer Website vorbei, um zu sehen, ob wir auch zu Ihnen kommen."}
+            </p>
+            <a href="https://go.homezero.nl/jh" className="pico-btn-primary" style={{ marginTop: 24, display: "inline-block", textDecoration: "none" }}>
+                Zurück zur Homepage
+            </a>
         </div>
     );
 }
@@ -1075,7 +1097,7 @@ function App() {
         return () => {
             try {
                 document.head.removeChild(script);
-            } catch (_) {}
+            } catch (_) { }
         };
     }, []);
 
@@ -1144,8 +1166,8 @@ function App() {
     };
 
     const showBack = ["2", "3", "4a", "4b"].includes(step);
-    const showClose = false; /* Quit option removed for 5a/5b */
-    const showProgress = !["5a", "5b"].includes(step);
+    const showClose = false; /* Quit option removed for 5a/5b/5c */
+    const showProgress = !["5a", "5b", "5c"].includes(step);
 
     /* Step 4a submit: trigger hidden hz-embed */
     const handleStep4aSubmit = () => {
@@ -1288,11 +1310,13 @@ function App() {
                         setFormData={setFormData}
                         onSuccess={() => setStep("5a")}
                         onBuildingNotFound={() => setStep("5b")}
+                        onOutsideArea={() => setStep("5c")}
                     />
                 )}
 
                 {step === "5a" && <Step5a />}
-                {step === "5b" && <Step5b />}
+                {step === "5b" && <Step5b onBack={() => setStep("4b")} />}
+                {step === "5c" && <Step5c />}
             </div>
 
             {/* Hidden hz-embed container */}
