@@ -800,18 +800,12 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound, onOutsid
                 },
             );
 
-            if (!res.ok) {
-                console.warn(`Pico API returned status ${res.status}`);
-                onBuildingNotFound();
-                return;
-            }
-
             let data = {};
             try {
                 data = await res.json();
             } catch (e) {
                 console.warn(
-                    "Pico API: Response is not valid JSON, but status was OK",
+                    "Pico API: Response is not valid JSON",
                 );
             }
 
@@ -819,6 +813,9 @@ function Step4b({ formData, setFormData, onSuccess, onBuildingNotFound, onOutsid
                 onBuildingNotFound();
             } else if (data.error === "address not inside the operating area") {
                 onOutsideArea();
+            } else if (!res.ok) {
+                console.warn(`Pico API returned status ${res.status}`);
+                onBuildingNotFound();
             } else {
                 onSuccess();
             }
