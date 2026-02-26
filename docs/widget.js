@@ -22005,7 +22005,7 @@ Falls Sie einen Hausnummernzusatz haben, überprüfen Sie bitte, ob er korrekt e
 function Hk() {
   return /* @__PURE__ */ T.jsxs("div", { className: "pico-step pico-step-center", children: [
     /* @__PURE__ */ T.jsx(hx, {}),
-    /* @__PURE__ */ T.jsx("h2", { className: "pico-step-title", style: { marginTop: 16 }, children: "Schade! In Ihrer Region sind wir noch nicht aktiv." }),
+    /* @__PURE__ */ T.jsx("h2", { className: "pico-step-title", style: { marginTop: 16 }, children: "Leider sind wir in Ihrer Region derzeit nicht aktiv." }),
     /* @__PURE__ */ T.jsx("p", { className: "pico-step-subtitle", style: { whiteSpace: "pre-wrap" }, children: "Wir arbeiten daran, unser Einsatzgebiet zu erweitern. Schauen Sie doch bald mal wieder auf unserer Website vorbei, um zu sehen, ob wir auch zu Ihnen kommen." }),
     /* @__PURE__ */ T.jsx("a", { href: "https://go.homezero.nl/jh", className: "pico-btn-primary", style: { marginTop: 24, display: "inline-block", textDecoration: "none" }, children: "Zurück zur Homepage" })
   ] });

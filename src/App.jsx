@@ -1060,7 +1060,7 @@ function Step5c() {
         <div className="pico-step pico-step-center">
             <IconWarningLarge />
             <h2 className="pico-step-title" style={{ marginTop: 16 }}>
-                Schade! In Ihrer Region sind wir noch nicht aktiv.
+                Leider sind wir in Ihrer Region derzeit nicht aktiv.
             </h2>
             <p className="pico-step-subtitle" style={{ whiteSpace: "pre-wrap" }}>
                 {"Wir arbeiten daran, unser Einsatzgebiet zu erweitern. Schauen Sie doch bald mal wieder auf unserer Website vorbei, um zu sehen, ob wir auch zu Ihnen kommen."}
